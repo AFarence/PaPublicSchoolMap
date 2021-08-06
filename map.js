@@ -17,20 +17,19 @@ map.on('load', function(){
         'paint':{
             'fill-color':'#0276FD',
             'fill-opacity': ['interpolate',['linear'],['get','B14001_001E'],
-0,0.25,
-2000000,0.75]
+1000,0.25,
+2000000,0.95]
 
         }
     }, );
 })
 
-// Create the popup
 map.on('click', 'schooldata', function (e) {
     var entriesDiff = e.features[0].properties.B14001_001E;
     var districtName = e.features[0].properties.NAME;
     new mapboxgl.Popup()
         .setLngLat(e.lngLat)
-        .setHTML('<h2>' + districtName + '</h2>' +  '<h3><hr>' +  entriesDiff + ' Students' + '</h3>')
+        .setHTML('<h2>' + districtName + '</h2>' +  '<h3><hr>' +  entriesDiff.toLocaleString() + ' Students' + '</h3>')
         .addTo(map);
 });
 map.on('mouseenter', 'schooldata', function () {
