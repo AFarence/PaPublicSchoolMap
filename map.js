@@ -12,7 +12,7 @@ map.on('load', function(){
         'type':'fill',
         'source': {
             'type':'geojson',
-            'data':'schooldata.geojson'
+            'data':'dataframe.geojson'
         },
         'paint':{
             'fill-color':'#0276FD',
